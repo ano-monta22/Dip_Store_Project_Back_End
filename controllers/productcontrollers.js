@@ -25,20 +25,7 @@ const getProductByID = async (req , res) =>{
 }
 }
 
-const getProductByCategory= async (req , res) =>{
-  try {
-    const {category} = req.params;
 
-    let singleProduct = await Product.find({category})
-    if(!singleProduct){
-      return res.status(404).json({msg : "product not found"})
-    }
-    res.json(singleProduct);
-
-  } catch (error) {
-    return  res.status(400).json(error);
-}
-}
 
 
 const addNewProduct = async (req , res) =>{
@@ -84,7 +71,6 @@ const deleteProduct = async (req , res) =>{
 module.exports = {
   getAllProducts,
   getProductByID,
-  getProductByCategory,
   addNewProduct,
   updateProductInfo,
   deleteProduct

@@ -14,7 +14,6 @@ prodRouter.route('/:productID')
 .patch(productcontrollers.updateProductInfo)
 .delete(productcontrollers.deleteProduct)
 
-prodRouter.route('/:productCatgory')
-.get(productcontrollers.getProductByCategory )
+
 
 module.exports = prodRouter;
